@@ -1,6 +1,7 @@
 package org.hknu.swim_planer.service;
 
 import lombok.RequiredArgsConstructor;
+import org.hknu.swim_planer.DTO.DailyWorkScheduleResponseDto;
 import org.hknu.swim_planer.entity.*;
 import org.hknu.swim_planer.entity.Enum;
 import org.hknu.swim_planer.repo.DailyWorkScheduleRepository;
@@ -14,6 +15,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -144,5 +146,13 @@ public class ScheduleService {
     // 시간 겹침 판단 알고리즘: (StartA < EndB) && (EndA > StartB)
     private boolean isTimeOverlapping(LocalTime startA, LocalTime endA, LocalTime startB, LocalTime endB) {
         return startA.isBefore(endB) && endA.isAfter(startB);
+    }
+
+    // 월별/기간별 스케줄 조회
+    public List<DailyWorkScheduleResponseDto> getSchedulesBetween(LocalDate startDate, LocalDate endDate) {
+        List<DailyWorkSchedule> schedules = scheduleRepository.findByWorkDateBetween(startDate, endDate);
+        return schedules.stream()
+                .map(DailyWorkScheduleResponseDto::new)
+                .collect(Collectors.toList());
     }
 }

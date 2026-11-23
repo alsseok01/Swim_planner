@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface DailyWorkScheduleRepository extends JpaRepository<DailyWorkSchedule, Long> {
     List<DailyWorkSchedule> findByWorkerIdAndWorkDateAndStatus(Long workerId, LocalDate workDate, Enum.ScheduleStatus status);
+    List<DailyWorkSchedule> findByWorkDateBetween(LocalDate startDate, LocalDate endDate);
 }
