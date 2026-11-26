@@ -1,7 +1,6 @@
 package org.hknu.swim_planer.repo;
 
 import org.hknu.swim_planer.entity.DailyWorkSchedule;
-import org.hknu.swim_planer.entity.Enum;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;

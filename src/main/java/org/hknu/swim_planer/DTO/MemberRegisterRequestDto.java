@@ -1,7 +1,6 @@
 package org.hknu.swim_planer.DTO;
 
 import lombok.Getter;
-import org.hknu.swim_planer.entity.Enum;
 
 import javax.management.relation.Role;
 import java.time.DayOfWeek;

@@ -1,6 +1,7 @@
 package org.hknu.swim_planer.service;
 
 import lombok.RequiredArgsConstructor;
+import org.hknu.swim_planer.entity.Member;
 import org.hknu.swim_planer.repo.MemberRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

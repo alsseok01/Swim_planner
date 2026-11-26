@@ -3,7 +3,6 @@ package org.hknu.swim_planer.service;
 import lombok.RequiredArgsConstructor;
 import org.hknu.swim_planer.DTO.DailyWorkScheduleResponseDto;
 import org.hknu.swim_planer.entity.*;
-import org.hknu.swim_planer.entity.Enum;
 import org.hknu.swim_planer.repo.DailyWorkScheduleRepository;
 import org.hknu.swim_planer.repo.FixedLessonRepository;
 import org.hknu.swim_planer.repo.LeaveRequestRepository;
